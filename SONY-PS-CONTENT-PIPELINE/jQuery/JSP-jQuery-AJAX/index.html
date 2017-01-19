@@ -1,0 +1,41 @@
+<!--
+//Author - Alexander Adu-Sarkodie
+//Date: October 2016
+//Document mision: Creates a form that takes a country code and then makes an AJAX request to 
+get more information about the country, if the country code is valid. 
+Also it intercepts the request using beforeSend config to add some dummy data to the request
+ and disables the SUBMIT button (See app.js) until we receive a response from the server (best practice). 
+ After we receive the response, we display the results inside the ajaxResponse DIV tag.-->
+
+ <html>
+<head>
+    <title>Alexander Adu-Sarkodie - jQuery Ajax POST data Request and Response</title>
+
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+   
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="script/app.js"></script>
+</head>
+<body>
+
+    <form id="myAjaxRequestForm">
+        <fieldset>
+            <legend>Content Pipeline - jQuery Ajax POST data Request and Response</legend>
+                <p>
+                    <label for="countryCode">Country Code:</label><br />
+                    <input id="countryCode" type="text" name="countryCode" />
+                </p>
+                <p>
+                    <input id="myButton" type="button" value="Submit" />
+                </p>
+        </fieldset>
+    </form>
+    <div id="anotherSection">
+        <fieldset>
+            <legend>Response from jQuery Ajax Request</legend>
+                 <div id="ajaxResponse"></div>
+        </fieldset>
+    </div>   
+</body>
+</html>

@@ -1,0 +1,7 @@
+URLs
+
+* http://webdesignerwall.com/tutorials/jquery-tutorials-for-designers
+* http://www.sitepoint.com/jquery-function-demos/
+* http://api.jquery.com/before/
+* http://www.dotnetheaven.com/article/how-to-use-jquery-event-focus-method
+* http://www.dotnetheaven.com/article/how-to-use-change-method-in-jquery

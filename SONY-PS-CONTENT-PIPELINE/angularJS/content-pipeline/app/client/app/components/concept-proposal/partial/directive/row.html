@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-xs-1">
+        <div data-ng-if="conceptProposalControllerRow.required()">*</div>
+       
+    </div>
+    <div class="col-xs-2">
+        <strong data-ng-if="conceptProposalControllerRow.label()">
+            [{{conceptProposalControllerRow.label()}}]
+        </strong>
+
+    </div>
+    <div class="col-xs-9">
+        <div data-ng-transclude class="form-group"></div>
+    </div> 
+</div>

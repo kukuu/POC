@@ -1,0 +1,13 @@
+<div data-concept-proposal-row
+    data-ng-if="conceptProposalControllerRowField.field.visible()"
+    data-label="{{conceptProposalControllerRowField.field.label()}}"
+    data-required="{{conceptProposalControllerRowField.field.required()}}">
+    <div data-ng-transclude></div>
+     <!--error message::Client side validation-->
+    <!--<div class="input-help">
+        <ul>
+          <li ng-class="textHasLetters" style="display:none;">This field can not be empty</strong></li>
+        </ul>
+    </div>-->
+      <!--end error message:-->
+</div>

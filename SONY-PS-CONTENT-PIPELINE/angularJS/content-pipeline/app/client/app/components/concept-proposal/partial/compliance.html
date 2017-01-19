@@ -1,0 +1,25 @@
+<h2>Compliance with PlayStation Policies</h2>
+
+<div data-concept-proposal-row-field="compliance.occComplianceComment">
+    <div data-toggle="buttons">
+        <label data-ng-repeat="option in conceptProposalControllerCompliance.occ.options">
+            <input type="radio"
+                data-ng-model="conceptProposalControllerCompliance.occ.value"
+                value="{{option.value}}"
+                style="margin-left: 150px;" />
+                    {{option.label}}
+        </label>
+    </div>
+</div>
+
+<div data-concept-proposal-row-field="compliance.virtualCurrencyComplianceComment">
+    <div data-toggle="buttons">
+        <label data-ng-repeat="option in conceptProposalControllerCompliance.virtualCurrency.options">
+            <input type="radio"
+                data-ng-model="conceptProposalControllerCompliance.virtualCurrency.value"
+                value="{{option.value}}"
+                style="margin-left: 150px;" />
+                    {{option.label}}
+        </label>
+    </div>
+</div>

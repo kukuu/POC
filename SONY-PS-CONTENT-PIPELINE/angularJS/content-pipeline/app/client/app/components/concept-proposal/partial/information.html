@@ -1,0 +1,176 @@
+
+ <!--added "name" and  "required" attributes to form fields for VALIDATION purposes::See index.js-->
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Core Concept Information</h2>
+    </div>
+</div>
+
+<!-- Regional Availability-->
+<div data-concept-proposal-row-field="concept.regions">
+    <div data-toggle="buttons">
+        <label data-ng-repeat="region in conceptProposalControllerInformation.regions">
+            <input type="checkbox" 
+                data-ng-model="region.value"  
+                data-ng-change="conceptProposalControllerInformation.update()"
+                style="margin-left: 150px;"
+                /> {{region.label}}
+        </label>
+    </div>
+</div>
+
+
+
+
+<!-- Concept Type -->
+<div data-concept-proposal-row-field="type">
+    <div data-toggle="buttons">
+        <label>
+            <input type="radio" name="cenceptType"  required data-ng-model="conceptProposalController.core.conceptType" value="game" style="margin-left: 150px;"/> Game
+        </label>
+        <label>
+            <input type="radio" name="cenceptType"  data-ng-model="conceptProposalController.core.conceptType" value="non-game"style="margin-left: 140px;" /> Non Game
+        </label>
+    </div>
+</div>
+<!-- End Concept Type -->
+
+<!-- Concept Name Fields -->
+<div data-concept-proposal-row-field="nameEN">
+
+    <input type="text"  name="requiredField" data-ng-model="requiredField" required class="form-control" />
+</div>
+
+<div data-concept-proposal-row data-ng-if="!conceptProposalControllerIndex.show('nameJA')">
+    <ul>
+        <li>
+            <a ng-click="conceptProposalControllerIndex.show('nameJA')">Add Japanese Concept Name</a>
+        </li>
+    </ul>
+</div>
+
+<div data-concept-proposal-row-field="nameJA">
+    <input type="text"  class="form-control" name="nameJA"   ng-model="codeNameJA" required  />
+</div>
+
+<div data-concept-proposal-row-field="codeNameEn">
+    <input type="text"  name="requiredField" required class="form-control" />
+</div>
+<div data-concept-proposal-row-field="codeNameJA">
+    <input type="text" name="requiredField" required class="form-control" />
+</div>
+
+<div concept-proposal-row data-ng-if="!conceptProposalControllerIndex.show('codeNameEn')">
+    <ul>
+        <li>
+            <a ng-click="conceptProposalControllerIndex.show('codeNameEn')">Add Codename</a>
+        </li>
+    </ul>
+</div> 
+<!-- End Concept Name Fields -->
+
+<!--end added-->
+
+
+
+<div concept-proposal-row-field="franchise">
+    <div shared-dropdown="conceptProposalControllerIndex.franchise"></div>
+</div>
+
+<!--Dependency::Cascading Select-->
+
+<!--To be removed::Dependency::Cascading Select-->
+
+<div concept-proposal-row-field="superGenre">
+    <div shared-dropdown="conceptProposalControllerIndex.superGenre"></div>
+</div>
+<div concept-proposal-row-field="categoryGenre">
+    <div shared-dropdown="conceptProposalControllerIndex.categoryGenre"></div>
+</div>
+
+<div ui-view="partner"></div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Target Age</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+    </div>
+</div>
+
+
+<div concept-proposal-row data-label="Target Age">
+    <div shared-dropdown="conceptProposalControllerIndex.age"></div>
+</div> 
+<!--end of drop down-->
+
+<!--File Attachements-->
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Game Design Document</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+    </div>
+</div>
+
+<div concept-proposal-row data-label="G D D EN">
+    <div>
+        <input type="file" name="requiredField" file-model="myFile"/>
+        <button style="border: margin-left:200px;margin-top: 10px;" ng-click="uploadFile()">upload me</button>
+    </div>
+</div> 
+<div concept-proposal-row data-label="G D D JP">
+    <div>
+        <input type="file" name="requiredField" file-model="myFile"/>
+        <button style="border: margin-left:200px;margin-top: 10px;" ng-click="uploadFile()">upload me</button>
+    </div>
+</div> 
+
+
+<!--other Attachments-->
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Other Attachments</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+    </div>
+</div>
+
+<div concept-proposal-row data-label="Other Attachments">
+    <div>
+        <input type="file" name="requiredField" file-model="myFile"/>
+        <button style="border: margin-left:200px;margin-top: 10px;" ng-click="uploadFile()">upload me</button>
+    </div>
+</div> 
+ 
+<!--End File Attachements-->
+
+<!--External review-->
+<div class="row" style="background-color: #cccccc;margin-top: 20px;margin-bottom: 30px;">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-9">
+        <label style="width: 100%">
+            <input type="checkbox" name="inputField" /><div style="margin-top: -20px;" concept-proposal-row data-label="External Review"></div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+<!--End External review-->
+
+<!--test clientside validation-->
+<!--<div class="row" style="background-color: #fff;margin-top: 10px;margin-bottom: 30px;">
+    <div class="col-xs-12" ng-include="'app/components/concept-proposal/partial/directive/cancel.html'"></div>
+</div>-->
+<!--end test clientside validation-->
+
+
+
+
+
+
+
+
+
+    
+

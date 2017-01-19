@@ -1,0 +1,30 @@
+
+<form name="conceptInformation">
+    <!--Application Home Page-->
+    <div class="row">
+        <div class="col-xs-3">
+            <a ui-sref="index.conceptProposal.information">Concept Information</a>
+        </div>
+        <div class="col-xs-3">
+            <a ui-sref="index.conceptProposal.platform">Platform Information</a>
+        </div>
+        <div class="col-xs-3">
+            <a ui-sref="index.conceptProposal.compliance">Compliance</a>
+        </div>
+        <!--<div class="col-xs-3">
+            <a ui-sref="index.conceptProposal.testvalidation">Test Validation</a>
+        </div>-->
+        <div class="col-xs-3">
+            <!-- <a ui-sref="">Test Validation</a> -->
+        </div>
+    </div>
+
+    <div style="margin-bottom: 10px;"></div>
+
+    <div ui-view></div>
+    <!--Footer-->
+    <div class="row" ng-controller="conceptProposalControllerInformation">
+        <div class="col-xs-12" ng-include="'app/components/concept-proposal/partial/footer.html'"></div>
+    </div>
+    <!--Footer-->
+</form>

@@ -1,0 +1,14 @@
+
+<div style="border:1px solid gray; width:500px; height:250px; padding:15px;" ng-controller="View2Controller">
+    <h2>view2</h2>
+
+    
+    <div ng-repeat="field in fields">
+        <strong>{{field.fieldCode}}</strong>
+        <input type="input" ng-model="field.value" ng-change="field.triggerUpdate && field.update()"> 
+        <br><br>
+    </div>
+    
+    <br>
+    <input type="button" value="saveSubmit" ng-click="saveSubmit()" class="pull-right">
+</div>

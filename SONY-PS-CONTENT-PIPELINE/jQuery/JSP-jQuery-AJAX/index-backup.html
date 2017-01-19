@@ -1,0 +1,43 @@
+<!--http://www.mysamplecode.com/2012/04/jquery-ajax-request-response-java.html:
+//Name: Author Alexander Adu-Sarkodie
+//Date: October 2016
+//Purpose: Created a form that takes a country code and then makes an AJAX request to 
+get more information about the country if the country code is valid. 
+Also we intercept the request using beforeSend config to add some dummy data to the request
+ and disable the SUBMIT button (See app.js) until we receive a response from the server. 
+ After we receive the response we display the results inside the ajaxResponse DIV tag.-->
+
+ <html>
+<head>
+    <title>jQuery Ajax POST data Request and Response</title>
+
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+   
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+
+    <form id="myAjaxRequestForm">
+        <fieldset>
+            <legend>jQuery Ajax Form data Submit Request</legend>
+
+                <p>
+                    <label for="countryCode">Country Code:</label><br />
+                    <input id="countryCode" type="text" name="countryCode" />
+                </p>
+                <p>
+                    <input id="myButton" type="button" value="Submit" />
+                </p>
+        </fieldset>
+    </form>
+    <div id="anotherSection">
+        <fieldset>
+            <legend>Response from jQuery Ajax Request</legend>
+                 <div id="ajaxResponse"></div>
+        </fieldset>
+    </div>   
+
+</body>
+</html>

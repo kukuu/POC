@@ -1,0 +1,9 @@
+<div data-toggle="buttons">
+    <label data-ng-repeat="option in sharedRadioController.options.list()">
+        <input type="radio"
+            data-ng-model="sharedRadioController.options.selected"
+            data-ng-model-options="{getterSetter: true}"
+            value="{{option.value}}"
+            style="margin-left: 150px;" /> {{option.label}}
+    </label>
+</div>

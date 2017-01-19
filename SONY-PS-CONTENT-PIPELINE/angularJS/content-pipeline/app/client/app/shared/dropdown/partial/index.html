@@ -1,0 +1,26 @@
+<!--Dropdown shared partial-->
+<div class="btn-group" style="width: 100%;">
+    <button type="button"
+        class="btn btn-default dropdown-toggle"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+        style="width: 100%;  text-align: left;"
+        data-ng-class="{disabled: sharedDropdownController.dropdown.disable()}">
+        {{sharedDropdownController.dropdown.select().label || sharedDropdownController.dropdown.placeholder()}}
+        <span style="position: absolute; top: 48%; right: 10px;" class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" style="width: 100%;">
+        <li data-ng-if="sharedDropdownController.firstItem">
+            <a data-ng-click="sharedDropdownController.firstItem.click()()">
+                {{sharedDropdownController.firstItem.label()}}
+            </a>
+        </li>
+        <!-- this is the dropdown list for the options-->
+        <li data-ng-repeat="item in sharedDropdownController.dropdown.list()">
+            <a data-ng-click="sharedDropdownController.dropdown.select(item.value)">
+                {{item.label}}
+            </a>
+        </li>
+    </ul>
+</div>

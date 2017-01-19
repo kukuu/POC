@@ -1,0 +1,15 @@
+<h3>Proposed Regional Availability</h3>
+<!-- Regional Availability-->
+<div data-concept-proposal-row data-label="Region">
+    <div data-toggle="buttons">
+        <label data-ng-repeat="region in regions">
+            <input type="checkbox" 
+                data-ng-model="region.value"
+                data-ng-change="update()"
+                style="margin-left: 150px;"
+                /> {{region.label}}
+        </label>
+    </div>
+</div>
+<!--This fragment is a re-usable component-->
+<div data-ng-include="'app/components/concept-proposal/partial/information.html'"></div>

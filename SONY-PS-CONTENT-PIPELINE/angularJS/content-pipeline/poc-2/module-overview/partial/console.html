@@ -1,0 +1,16 @@
+
+<div style="border-top:2px solid gray; width:100%; height:100%; background-color:#e2e2e2;" ng-controller="ConsoleController">
+    <h2>Console - [Field Factory]</h2>
+    <div>
+        <div ng-repeat="field in allFields">
+            <div>{{field.fieldCode}}:<span>{{field.value}}</span></div>
+        </div>
+    </div>
+
+    <br>
+    <h2>Console Object - [Concept Factory]</h2>
+    <div>
+        <div>{{conceptObject()}}</span></div>
+    </div>
+
+</div>

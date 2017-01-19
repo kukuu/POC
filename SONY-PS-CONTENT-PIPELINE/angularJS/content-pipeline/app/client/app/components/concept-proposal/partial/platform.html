@@ -1,0 +1,20 @@
+<h3>Proposed Platforms</h3>
+
+<!-- Platforms -->
+<div data-concept-proposal-row-field="proposal.platforms">
+    <div data-toggle="buttons">
+        <label data-ng-repeat="platform in conceptProposalControllerPlatform.platforms">
+            <input type="checkbox" 
+                data-ng-model="platform.value"
+                data-ng-change="conceptProposalControllerPlatform.update()"
+                style="margin-left: 150px;"
+                /> {{platform.label}}
+        </label>
+    </div>
+</div>
+
+<p>Lorem ipsum amet consecteur....</p>
+<!--This fragment is a re-usable component-->
+<div data-ng-include="'app/components/concept-proposal/partial/platforminformation.html'"></div>
+
+
