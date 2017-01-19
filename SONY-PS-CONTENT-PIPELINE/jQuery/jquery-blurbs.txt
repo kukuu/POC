@@ -1,3 +1,0 @@
-JQuery
-
-JQuery is a JavaScript Framework  used for Rapid Application Development. It is a "Write Less Code Do More" library. You will learn to make JSON calls via AJAX APIs, handle Animation, Events, DOM Manipulation, Traversing and Data Manipulation.

@@ -1,3 +1,0 @@
-http://openenergymonitor.org/emon/node/107
-
-http://api.jquery.com/category/selectors/

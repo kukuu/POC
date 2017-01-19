@@ -1,2 +1,0 @@
-see digitek/jquery
-tutorials 1 & tutorials 2
