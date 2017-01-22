@@ -37,19 +37,18 @@
 
 		$taxrate = ($_POST['tax'] / 100);  //turns eg 5% to 0.05
 		$total -= ($total *  $taxrate); //add the taxrate to total
-		$taxrate2 = ($_POST['tax2'] / 100);  //turns eg 5% to 0.05
 		
 			
-			//Now we print the result
+		//Now we print the result
 			
 		echo '<p>The total cost of your purchased  items  is £' . number_format($total,2) . '</p>';		
 		} else { //invalid submitted values
 			echo '<h1>Error</h1>
-			<p class="error"> Please enter a valid quantity, price and tax</p>';
+			<p class="error"> Please enter a valid quantity, and price</p>';
 			
 		}
 	
-	}//End of main isset() 
+	}//End of pricing algorithm
 
 	//Now we leave the PHP section and create the form
 
