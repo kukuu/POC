@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <script type="text/javascript" src="http://jasmine.github.io/1.3/lib/jasmine.js"></script>
+  <script type="text/javascript" src="http://jasmine.github.io/1.3/lib/jasmine-html.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jasmine.github.io/1.3/lib/jasmine.css">
+  <script type="text/javascript" src="http://code.angularjs.org/1.2.9/angular.js"></script>
+  <script type="text/javascript" src="http://code.angularjs.org/1.2.9/angular-mocks.js"></script>
+  <title>The Travel Company - Testing grocery items  controllers with Jasmine</title>
+</head>
+<body>
+
+<script type='text/javascript'>
+
+//--- Autor: Alexander Adu-Sarkodie 
+// Date: January 2017 --------------------------
+(function (angular) {
+    // Create module
+    var myApp = angular.module('myApp', []);
+
+    // Controller which counts changes to its "name" member
+    myApp.controller('ItemController', ['$scope', function ($scope) {
+        $scope.name = 'Butter';
+        $scope.counter = 0;
+        $scope.$watch('name', function (newValue, oldValue) {
+            $scope.counter = $scope.counter + 1;
+        });
+    }]);
+
+    // Controller with dependencies on Angular's $http service and promises
+    myApp.controller('ItemCtrlHttp', function ($http, $scope, $q) {
+        // Returns a promise which is resolved if http calls succeeds,
+        // otherwise the promise is rejected
+        $scope.getHttp = function () {
+
+            var defer = $q.defer();
+
+            // Perform the actual HTTP call with query parameters
+            // e.g. GET <server url>/someUrl?key=value1
+            $http({
+                method: 'GET',
+                url: '/POC/TTC/shopfront',
+                headers: {
+                    'Accept-Language': 'en'
+                },
+                params: {
+                    key1: "Butter"
+                }
+            }).
+            success(function (data, status, headers, config) {
+                // this callback will be called asynchronously
+                // when the response is available
+                defer.resolve(data);
+            }).
+            error(function (data, status, headers, config) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                defer.reject();
+            });
+
+            return defer.promise;
+        };
+    });
+})(angular);
+
+
+// ---SPECS-------------------------
+
+// describe('myApp', function () {
+//     var scope,
+//     controller;
+//     beforeEach(function () {
+//         module('myApp');
+//     });
+
+//     describe('ItemController', function () {
+//         beforeEach(inject(function ($rootScope, $controller) {
+//             scope = $rootScope.$new();
+//             controller = $controller('ItemController', {
+//                 '$scope': scope
+//             });
+//         }));
+//         it('sets the grocery  item  name', function () {
+//             expect(scope.name).toBe('Butter');
+//         });
+
+//         it('watches the grocery name and updates the number of items', function () {
+//             expect(scope.counter).toBe(0);
+//             scope.name = 'Bread';
+//             scope.$digest();
+//             expect(scope.counter).toBe(1);
+//         });
+//     });
+
+//     describe('ItemCtrlHttp', function () {
+
+//         var $httpBackend,
+//             expectedUrl = '/POC/TTC/shopfront?key1=Butter',
+//             promise,
+//             successCallback,
+//             errorCallback,
+//             httpController;
+
+//         beforeEach(inject(function ($rootScope, $controller, _$httpBackend_) {
+//             $httpBackend = _$httpBackend_;
+//             scope = $rootScope.$new();
+//             successCallback = jasmine.createSpy();
+//             errorCallback = jasmine.createSpy();
+//             httpController = $controller('ItemCtrlHttp', {
+//                 '$scope': scope
+//             });
+//         }));
+
+//         afterEach(function() {
+//             $httpBackend.verifyNoOutstandingExpectation();
+//             $httpBackend.verifyNoOutstandingRequest();
+//         });
+
+//         it('returns http requests successfully and resolves the promise', function () {
+//             var data = '{"translationKey":"translationValue"}';
+//             expect(httpController).toBeDefined();
+//             $httpBackend.expectGET(expectedUrl).respond(200, data);
+//             promise = scope.getHttp();
+//             promise.then(successCallback, errorCallback);
+
+//             $httpBackend.flush();
+
+//             expect(successCallback).toHaveBeenCalledWith(angular.fromJson(data));
+//             expect(errorCallback).not.toHaveBeenCalled();
+//         });
+
+//         it('returns http requests with an error and rejects the promise', function () {
+//             $httpBackend.expectGET(expectedUrl).respond(500, 'Oh no!!');
+//             promise = scope.getHttp();
+//             promise.then(successCallback, errorCallback);
+
+//             $httpBackend.flush();
+
+//             expect(successCallback).not.toHaveBeenCalled();
+//             expect(errorCallback).toHaveBeenCalled();
+//         });
+//     });
+    
+// });
+
+// // --- Runner -------------------------
+// (function () {
+//     var jasmineEnv = jasmine.getEnv();
+//     jasmineEnv.updateInterval = 1000;
+
+//     var htmlReporter = new jasmine.HtmlReporter();
+
+//     jasmineEnv.addReporter(htmlReporter);
+
+//     jasmineEnv.specFilter = function (spec) {
+//         return htmlReporter.specFilter(spec);
+//     };
+
+//     var currentWindowOnload = window.onload;
+
+//     window.onload = function () {
+//         if (currentWindowOnload) {
+//             currentWindowOnload();
+//         }
+//         execJasmine();
+//     };
+
+//     function execJasmine() {
+//         jasmineEnv.execute();
+//     }
+
+// })();
+
+</script>
+<sscript src="js/specs.js"></sscript>
+<sscript src="js/runner.js"></sscript>
+
+</body>
+</html>
