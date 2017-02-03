@@ -6,10 +6,10 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="googlebot" content="noindex, nofollow">
     <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.js"></script>
-    <title>jQuery Ajax response</title>
+    <title>jQuery Ajax response Alexander Adu-Sarkodie</title>
     <script type='text/javascript'>//<![CDATA[
 
-    var echo = function(dataPass) {
+    var result = function(dataPass) {
         $.ajax({
             type: "POST",
             url: "http://echo.jsontest.com/uid/12345/value/echo/json/",
@@ -27,7 +27,7 @@
                 json: JSON.stringify(data),
                 delay: 1
             };
-            echo(json);
+            result(json);
         });
     });
     //]]> 
