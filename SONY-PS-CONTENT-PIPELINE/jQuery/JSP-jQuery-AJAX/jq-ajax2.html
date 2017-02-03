@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.js"></script>
+    <title>jQuery Ajax response</title>
+    <script type='text/javascript'>//<![CDATA[
+
+    var echo = function(dataPass) {
+        $.ajax({
+            type: "POST",
+            url: "http://echo.jsontest.com/uid/12345/value/echo/json/",
+            data: dataPass,
+            cache: false,
+            success: function(json) {
+                alert("UID=" + json.uid + "\nName=" + json.value);
+            }
+        });
+    };
+
+    $('.list').live('click', function() {
+        $.get("http://echo.jsontest.com/uid/12345/value/nuno_bettencourt", function(data) {
+            var json = {
+                json: JSON.stringify(data),
+                delay: 1
+            };
+            echo(json);
+        });
+    });
+    //]]> 
+
+    </script>
+  </head>
+  <body>
+    <input type="button" class="list" value="click me"></input>
+  </body>
+</html>
+
