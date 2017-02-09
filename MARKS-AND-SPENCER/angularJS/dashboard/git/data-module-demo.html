@@ -1,0 +1,183 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <title>Highcharts Data module - jsFiddle demo by highcharts</title>
+  
+  <script type='text/javascript' src='//code.jquery.com/jquery-1.8.3.js'></script>
+  
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css"/>
+  
+  <style type='text/css'>
+    #containers div {
+    width: 300px;
+    height: 200px;
+    float: left;
+    margin: 0 1em 1em 0;
+}
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+$(function(){
+Highcharts.setOptions({
+    chart: {
+        backgroundColor: '#F0F0F8',
+        shadow: true
+    }
+});
+
+
+$('#container1').highcharts({
+    data: {
+        csv: document.getElementById('csv1').innerHTML
+    },
+    title: {
+        text: 'Categorized CSV data'
+    }
+});
+
+$('#container2').highcharts({
+    data: {
+        csv: document.getElementById('csv2').innerHTML
+    },
+    title: {
+        text: 'Time based CSV data'
+    }
+});
+
+$('#container3').highcharts({
+    data: {
+        table: document.getElementById('datatable1')
+    },
+    title: {
+        text: 'Data from a HTML table'
+    }
+});
+
+$('#container4').highcharts({
+    data: {
+        googleSpreadsheetKey: '0AoIaUO7wH1HwdENPcGVEVkxfUDJkMmFBcXMzOVVPdHc'
+    },
+    title: {
+        text: 'Data from a Google spreadsheet'
+    }
+});
+
+$('#container5').highcharts({
+    data: {
+        csv: document.getElementById('csv1').innerHTML
+    },
+    title: {
+        text: 'Mixing in series options'
+    },
+    series: [{  // the 'Gert' series
+        type: 'column'
+    }, { // the 'Torstein' series
+        dashStyle: 'dash'
+    }]
+});
+
+
+});//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/data.js"></script>
+
+<h1>Highcharts Data module demo</h1>
+
+<p>For the full options reference for the data module, read the header of the <a href="https://github.com/highslide-software/highcharts.com/blob/rambera/js/modules/data.src.js">data.src.js file</a>.</p>
+
+<div id="containers">
+    <div id="container1"></div>
+    <div id="container2"></div>
+    <div id="container3"></div>
+    <div id="container4"></div>
+    <div id="container5"></div>
+</div>
+
+
+
+<pre id="csv1" style="display: none">Fruit,Gert,Torstein,Erik
+Apples,1,2,5
+Pears,3,1,2
+Oranges,4,6,9</pre>
+
+<pre id="csv2" style="display: none">Fruit,John,Jane
+2012-01-01,1,2
+2012-01-02,3,1
+2012-01-03,4,6
+2012-01-06,1,2
+2012-01-07,3,1
+2012-01-08,4,6</pre>
+
+<div id="csv3" style="display: none">    Date,Measurement
+    1302536838801,1
+    1302536898820,2
+    1302536958838,3
+    1302537438971,4
+    1302538579311,3
+    1302538879398,2
+    1302539179485,3
+    1302539780167,2
+    1302539840185,3
+    1302539960221,4
+    1302540140276,3
+    1302540260311,4
+    1302540440365,3
+    1302540500383,5
+    1302540740454,6
+    1302540860492,7</div>
+
+<table id="datatable1" style="display:none">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Jane</th>
+            <th>John</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Apples</th>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <th>Pears</th>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>Plums</th>
+            <td>5</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <th>Bananas</th>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <th>Oranges</th>
+            <td>2</td>
+            <td>4</td>
+        </tr>
+    </tbody>
+</table>
+
+  
+</body>
+
+
+</html>
+

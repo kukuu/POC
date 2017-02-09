@@ -1,0 +1,43 @@
+@import "bourbon";
+
+$accent: #ff4081;
+$primary: #1976d2;
+
+body > div {
+    padding: 20px 40px;
+}
+
+nav {
+    ul { margin: 20px 0 0 0; padding: 0; }
+    li {
+        display: inline-block;
+        margin-right: 5px;
+
+        a {
+            display: inline-block;
+            padding: 8px 10px;
+            color: #bada55;
+            text-decoration: none;
+
+            &:hover {
+                color: darken(#bada55, 20%);
+                background: lighten(#bada55, 30%);
+            }
+        }
+        
+        &.current {
+            a {
+                color: #fff;
+                background: $accent;
+            }
+        }
+    }
+}
+
+.content {
+    display: inline-block;
+    padding: 20px;
+    background: $accent;
+    
+    img { max-width: 100%; }
+}

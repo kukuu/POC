@@ -1,0 +1,103 @@
+<div class="page" data-ng-controller="ClientCtrl">
+    <ul class="inline">
+        <li>
+            <div class="alert alert-info">
+                 <h4>Total Filtered Engineers: {{filtered.length}}</h4>
+            </div>
+        </li>
+        <li>
+            <div class="btn-group" data-ng-class="{open: open}">
+                <button class="btn">Filter by Department</button>
+                <button class="btn dropdown-toggle" data-ng-click="open=!open"> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                    <li><a data-ng-click="checkAll()"><i class="icon-ok-sign"></i>  Check All</a></li>
+                    <li><a data-ng-click="selectedDepartment=[];"><i class="icon-remove-sign"></i>  Uncheck All</a> </li>
+                    <li class="divider"></li>
+                    <li data-ng-repeat="department in companyList"> 
+                        <a data-ng-click="setSelectedClient()">{{department.name}}<span data-ng-class="isChecked(department.id)"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li><div class="commit-dashboad">
+                <!--<a href="../dashboard/git-stats.html">Best Authors</a></a>-->
+            <a href="../dashboard/git/best_authors.html">GITHUB Analytics</a><!--Best Authors-->
+        </div>
+        </li>
+    </ul>
+    <hr/>
+    <h3>Engineers:</h3>
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th style="width:5%">#</th>
+                <th style="width:9%">BId</th>
+                <th style="width:15%">Name</th>
+                <th style="width:14%">Surname</th>
+                <th style="width:20%">Title</th>
+                <th style="width:15%">Department</th>
+                <th style="width:12%">Email</th>
+                <th style="width:5%">GAM<!--GIT Activity Monitor--></th>
+                <th style="width:5%">Analytics</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="client in filtered = (clients | companyFilter:selectedDepartment)">
+                <td>{{$index + 1}}</td>
+                <td>{{client.bid}}</td>
+                <td>{{client.name}}</td>
+                <td>{{client.sname}}</td>
+                <td>{{client.title}}</td>
+                <td>{{client.department.name}}</td>
+                <td>{{client.department.email}}</td>
+                <td><a href="../dashboard/git/best_authors.html">Analytics</a></td>
+                <td><i><a href="{{camURL}}">></a></i></td>
+            </tr>
+        </tbody>
+    </table>
+    <pre>{{selectedCompany|json}}</pre>
+    <pre>{{companyList|json}}</pre>
+    <pre>{{clients|json}}</pre>
+    <p><strong>Software Name</strong> : Management Operational Tool -kuk MOT (AKA Dashboard)<br />
+        <strong>Version:</strong> 1.0 <br>
+        <strong>Author:</strong> Alexander Adu-Sarkodie <br>
+        <strong>Features:</strong> Highly Configurable, Look Up (Filters) <br>
+        <strong>Programming Languages & APIs</strong> <br />
+        JavaScript <br />
+        AngularJS <br />
+        UnderscoreJS<br />
+        GitHub API<br />
+        <!--https://developer.github.com/v3/<br />
+        https://api.github.com/orgs/DigitalInnovation/members<br /> 
+        https://notjustanyteam.com/team/digital-labs<br />
+        http://code.notsoclever.cc/simple-github-api-webapp-angularjs-style/<br />
+        https://github.com/DigitalInnovation/<br />
+        https://github.com/btford/briantford.com/blob/master/jade/blog/angular-d3.md<br />
+        https://api.github.com/users/lucatrincauk/repos-->
+        Responsive / Flexible Layout<br />
+        D3JS - HighstockJS from HighCharts<br />
+        HTML5<br />
+        HTML<br />
+        CSS3<br />
+        <strong>Note</strong>: 
+        <ul>
+            <li>The Software consists of two  integrated modules : <strong>Departmental Groups </strong> & <strong>GitHub Activity Monitor.</strong></li>
+            <li>The Primary key (record identifier) "0" is used as default key where an engineer's department is yet to be established.</li>
+            <li>Primary Keys are referenced as Foreign Keys to  enable engineers to be categorised into sub (departmental) groups.</li>
+            <li>This model allows aggregation of a list of engineers to  belong to a common group.</li>
+            <li>It can also be used in Unit Tests to capture, customise and categorise errors from a global scope.</li>
+        </ul> 
+        <strong>Abbreviations</strong>: <br>
+        MOT - Management Operational Tool <br />
+        GAM - GITHUB Activity Monitor <br />
+        BId - Employee dentifier.
+    </p>
+</div>
+  
+</body>
+
+
+</html>

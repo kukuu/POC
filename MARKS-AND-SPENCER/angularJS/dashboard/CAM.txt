@@ -1,0 +1,37 @@
+Commit Activity Monitor (CAM)
+..............................
+
+Author: Alexander Adu-Sarkodie
+
+Date: July 2015
+
+Position: Software Engineering Development Lead
+
+Features:
+* Support for Real time GIT Commit
+* Commit update per user
+* Live update
+* Message storage Playback - Support for connectivity (when no internet connection - callback)
+* Flag commits - Custom popups when large groups of commit are pushed
+* Error Handler & Developer console
+
+MVP Feature
+............
+* Team
+OR
+* Individual
+
+
+
+Google Search term: 
+1. how to build GIT dashboard to handle commits 
+
+2. how to build open source GIT dashboard to handle commits
+3.how to build GIT dashboard to handle commits. Commit update per user
+
+
+* Resource: http://www.pubnub.com/blog/realtime-dashboard-track-github-commits/
+* https://github.com/Freeboard/freeboard
+* http://www.highcharts.com/
+*http://pablojim.github.io/highcharts-ng/examples/example.html
+" http://api.highcharts.com/highcharts#Chart

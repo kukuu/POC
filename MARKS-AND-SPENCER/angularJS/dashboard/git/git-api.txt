@@ -1,0 +1,52 @@
+1. All API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.
+
+Here’s an example:User-Agent: Awesome-Octocat-App
+
+
+2. Using callback
+
+$ curl https://api.github.com?callback=foo
+
+/**/foo({
+  "meta": {
+    "status": 200,
+    "X-RateLimit-Limit": "5000",
+    "X-RateLimit-Remaining": "4966",
+    "X-RateLimit-Reset": "1372700873",
+    "Link": [ // pagination headers and other links
+      ["https://api.github.com?page=2", {"rel": "next"}]
+    ]
+  },
+  "data": {
+    // the data
+  }
+})
+
+3. Processing Callback using JavaScript:
+
+<html>
+<head>
+<script type="text/javascript">
+function foo(response) {
+  var meta = response.meta;
+  var data = response.data;
+  console.log(meta);
+  console.log(data);
+}
+
+var script = document.createElement('script');
+script.src = 'https://api.github.com?callback=foo';
+
+document.getElementsByTagName('head')[0].appendChild(script);
+</script>
+</head>
+
+<body>
+  <p>Open up your browser's console.</p>
+</body>
+</html
+
+
+4.https://github.com/btford/briantford.com/blob/master/jade/blog/angular-d3.md
+...............................................................
+

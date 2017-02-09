@@ -1,0 +1,35 @@
+body > div {
+  padding: 20px 40px;
+}
+
+nav ul {
+  margin: 20px 0 0 0;
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+  margin-right: 5px;
+}
+nav li a {
+  display: inline-block;
+  padding: 8px 10px;
+  color: #bada55;
+  text-decoration: none;
+}
+nav li a:hover {
+  color: #86a524;
+  background: #edf5d3;
+}
+nav li.current a {
+  color: #fff;
+  background: #ff4081;
+}
+
+.content {
+  display: inline-block;
+  padding: 20px;
+  background: #ff4081;
+}
+.content img {
+  max-width: 100%;
+}
